@@ -1,0 +1,1081 @@
+commit fc7adb7a6aad386ead0fe05797f256e58cb65194
+Author: koya75 <komari83@mprg.cs.chubu.ac.jp>
+Date:   Tue Mar 1 15:02:15 2022 +0900
+
+    Revert "feat(engine): support wandb logger (#1144)"
+    
+    This reverts commit cc6bff6ece140b799173175035324092bb1eaed9.
+
+commit cc6bff6ece140b799173175035324092bb1eaed9
+Author: Manan Goel <manangoel1999@gmail.com>
+Date:   Fri Feb 25 09:19:39 2022 +0530
+
+    feat(engine): support wandb logger (#1144)
+    
+    feat(engine): support wandb logger
+
+commit 8a9003d308d6620d03280585f34439b1a21668ba
+Author: NOBODY <shenyi0220@hotmail.com>
+Date:   Tue Feb 22 12:24:52 2022 +0800
+
+    fix(data): dataset error when running on test-dev (#1137)
+    
+    fix(data): dataset error when running on test-dev
+
+commit d98da01b44088ee674d7794190b569f4fa541698
+Author: Vyacheslav Eliseev <eliseev.1999.slava@mail.ru>
+Date:   Tue Feb 22 05:56:58 2022 +0300
+
+    fix(utils): occupy_mem based on CUDA_VISIBLE_DEVICES (#1139)
+    
+    fix(utils): occupy_mem based on CUDA_VISIBLE_DEVICES
+
+commit d99bee009220e3c4878ab4b97ff20f14dd8281a9
+Author: Joakim Eriksson <joakim.eriksson@ri.se>
+Date:   Mon Feb 21 07:27:30 2022 +0100
+
+    chore(tools): show demo in live window (#1138)
+    
+    chore(tools): show demo in live window
+
+commit 2eda8fe91c35238e98386a31cca622acaba01f55
+Author: Vyacheslav Eliseev <eliseev.1999.slava@mail.ru>
+Date:   Mon Feb 21 05:53:25 2022 +0300
+
+    chore(evaluator): support  custom dataset (#1131)
+    
+    chore(evaluator): support  custom dataset
+    
+    Co-authored-by: Feng Wang <wangfeng19950315@163.com>
+
+commit 57309c730d9f8c0dd1496706886ec00ddc8a11d2
+Author: Feng Ni <nemonameless@qq.com>
+Date:   Fri Feb 18 18:44:07 2022 +0800
+
+    fix(exps): typo in tiny (#1129)
+    
+    fix(exps): typo in tiny
+
+commit 8ba7b6d1acbeb204917eb4ab82bfb0dda413dd10
+Author: AaronNZH <45916418+AaronNZH@users.noreply.github.com>
+Date:   Wed Feb 16 16:50:12 2022 +0800
+
+    fix(data): value convert error (#1125)
+    
+    fix(data): value convert error
+
+commit 0e6f6c6b5ac4caebaba4d0bb65aa699ddf56d880
+Author: wico-silva <91887911+wico-silva@users.noreply.github.com>
+Date:   Fri Feb 11 04:09:13 2022 +0100
+
+    fix(tools): disable autograd during TensorRT conversion (#1118)
+
+commit 237e943ac64aa32eb32f875faa93ebb18512d41d
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Thu Jan 27 15:42:14 2022 +0800
+
+    fix(core): avoid overwrite best ckpt and add attr description (#1103)
+
+commit 6b49fd22034bc0c116efef7dd5a526d639ffa9ac
+Author: robin-maillot <robin.maillot93@gmail.com>
+Date:   Thu Jan 27 04:04:32 2022 +0100
+
+    fix(demo & tools): path issues of Windows system (#1100)
+    
+    fix(demo & tools): path issues of Windows system
+
+commit 856bf0ff8b3065f3e5c83d60fbcf6be0b725f6d9
+Author: WooWonjin <dndnjswls613@naver.com>
+Date:   Wed Jan 26 13:01:15 2022 +0900
+
+    fix(models): typo in darknet (#1098)
+
+commit ca9bc378136ca156a1ccdd22e7015f9b8aac70a0
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Tue Jan 18 12:06:51 2022 +0800
+
+    feat(setup): add pip package code (#1079)
+
+commit 25f116b3145db3f2808ffbe722677d301e34f40d
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Wed Jan 12 15:37:34 2022 +0800
+
+    fix(evaluator): fix attr bug in COCOEvaluator (#1067)
+
+commit 147a8a35e23ffd7cf16aea6654279a6bfb688a3b
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Wed Jan 12 15:02:03 2022 +0800
+
+    chore(data): save memory for COCO dataset (#1066)
+
+commit 6c874ce4311fbeed0265f6f410b9f58c72483183
+Author: yyqgood <godloveyyq@163.com>
+Date:   Wed Jan 12 11:59:04 2022 +0800
+
+    chore(data): Adapt to COCO format dataset (#1052)
+    
+    chore(data): Adapt to COCO format dataset
+
+commit d669fd38d9ac672a9e5a7eab5aa61d3be6b3959a
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Fri Dec 24 17:54:14 2021 +0800
+
+    feat(evaluator): support logging per class mAP during evaluation (#1026)
+    
+    * feat(evaluator): support logging per class mAP during evaluation
+    
+    * make linter happy
+
+commit 12d0df18b5f5010ed264c499d069fc107f6e85cc
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Thu Dec 23 17:35:35 2021 +0800
+
+    feat(exp,tools): support installation for pip (#1020)
+
+commit dd5700c24693e1852b55ce0cb170342c19943d8b
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Thu Nov 18 16:20:56 2021 +0800
+
+    Revert "chore(setup): add torch to build requirements (#682)" (#915)
+    
+    This reverts commit 2c2dd1397ab090b553c6e6ecfca8184fe83800e1.
+
+commit 2c2dd1397ab090b553c6e6ecfca8184fe83800e1
+Author: Robert Gibboni <robert@drivendata.org>
+Date:   Tue Nov 9 22:51:38 2021 -0500
+
+    chore(setup): add torch to build requirements (#682)
+    
+    chore(setup): add torch to build requirements
+
+commit f778fdba8f083e6f1e8dd168fe7a8faa5faa8484
+Author: ankandrew <61120139+ankandrew@users.noreply.github.com>
+Date:   Sat Nov 6 03:12:53 2021 -0300
+
+    fix(demo): change ncnn output names in cpp tutorial (#881)
+    
+    change ncnn output names in cpp tutorial
+    
+    Co-authored-by: Feng Wang <wangfeng19950315@163.com>
+
+commit 0cce4a6f4ed6b7772334a612cdcc51aa16eb0591
+Author: Wayne Mao <35285052+WayneMao@users.noreply.github.com>
+Date:   Fri Nov 5 11:28:35 2021 +0800
+
+    chore(model) optimize dynamic_k_matching with int (#861)
+    
+    chore(model) optimize dynamic_k_matching with int
+
+commit 38c633bf176462ee42b110c70e4ffe17b5753208
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Fri Oct 29 11:53:21 2021 +0800
+
+    fix(plugins): update workflow and fix bug of kwargs in nano (#844)
+
+commit 6880e3999eb5cf83037e1818ee63d589384587bd
+Author: 791136190 <791136190@qq.com>
+Date:   Mon Oct 18 17:16:35 2021 +0800
+
+    fix hsv augment overflow error (#802)
+
+commit 12c7d3e9aae94d5abeac84dfe1b48ce13715abda
+Author: DefTruth <31974251+DefTruth@users.noreply.github.com>
+Date:   Mon Oct 18 15:17:48 2021 +0800
+
+    update TNN demo link in README (#800)
+    
+    update TNN demo link in README
+
+commit c38d59e6b006758160c75c1e7636bd71da1826b8
+Author: DefTruth <31974251+DefTruth@users.noreply.github.com>
+Date:   Fri Oct 15 13:38:37 2021 +0800
+
+    update MNN demo link in README (#792)
+    
+    update MNN demo link in README
+
+commit f0d1ce892e9fbe0bd982abf00de979db63e4887f
+Author: Liu Songtao <ruinmessi@gmail.com>
+Date:   Fri Oct 15 12:06:17 2021 +0800
+
+    remove perspective (#791)
+    
+    remove perspective
+
+commit a5f629a6d28fcc3742ce9483698b3376ce457533
+Author: LGD-Ti-fighting <35716746+LGD-Ti-fighting@users.noreply.github.com>
+Date:   Thu Oct 14 11:21:06 2021 +0800
+
+    remove yolov5 codes with new hsv aug and new random affine transform (#781)
+    
+    remove yolov5 codes to make license legal
+    
+    Co-authored-by: Feng Wang <wangfeng19950315@163.com>
+
+commit 4831696863c524857209bb710d6b9655bc734e6a
+Author: AlanNewImage <xushenglei615@gmail.com>
+Date:   Wed Sep 29 17:05:03 2021 +0800
+
+    Support rectangle input for TensorRT C++ demo(#752)
+    
+    Co-authored-by: Songtao Liu <ruinmessi@gmail.com>
+
+commit d6e465cb33ded065b78868ea7a1fe1fdf1c98499
+Author: shachargluska <57857737+shachargluska@users.noreply.github.com>
+Date:   Mon Sep 27 09:06:42 2021 +0300
+
+    Feature/ support setting activation functions for yolox models (#743)
+
+commit abc8c870daa22faffd5eaf9d293a16d98437185a
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Mon Sep 27 14:01:48 2021 +0800
+
+    fix typos and add warning messages when using --cache (#733)
+    
+    Co-authored-by: Songtao Liu <ruinmessi@gmail.com>
+
+commit 9a957f51de30f2a4f06c7bca28b670006d603d69
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Wed Sep 22 12:55:24 2021 +0800
+
+    fix(loss): fix the wrong implementation of GIoU (#723)
+
+commit 2213f2f01c144915bfbbfa2e6b1396aab5417e1c
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Wed Sep 22 10:41:44 2021 +0800
+
+    clean up some redundant code in yolo_head (#721)
+
+commit 426523d3b528bb7be5059672e46f39acc3e3745c
+Author: ankandrew <61120139+ankandrew@users.noreply.github.com>
+Date:   Fri Sep 17 02:40:43 2021 -0300
+
+    fix(demo): update prerpocess in android code of ncnn (#704)
+
+commit 2a0a3bfae0403d95e882081288d85e60dfa65ba2
+Author: Forsaken <tsaozh3@gmail.com>
+Date:   Fri Sep 17 13:39:28 2021 +0800
+
+    fix a spelling mistake (#707)
+
+commit db7aa57c5bf5aeb1aea47bccef9eff97cba2a749
+Author: wwqgtxx <wwqgtxx@gmail.com>
+Date:   Tue Sep 14 10:27:20 2021 +0800
+
+    support setting max batch/workspace size when convert to trt (#692)
+
+commit c7c5ccf7dc8ada38506bf11700031edd396d86d7
+Author: ankandrew <61120139+ankandrew@users.noreply.github.com>
+Date:   Mon Sep 13 23:25:54 2021 -0300
+
+    fix (docs) train_custom_data: mscale -> mosaic_scale (#693)
+
+commit 52c878e3039fd68a0796c038346b347c48138f50
+Author: yahoo17 <55846951+yahoo17@users.noreply.github.com>
+Date:   Mon Sep 13 13:27:41 2021 +0800
+
+    Update demo.py (#689)
+
+commit be02441e63fe7136d6d16785780c780fcbcbdee9
+Author: wwqgtxx <wwqgtxx@gmail.com>
+Date:   Mon Sep 13 13:27:02 2021 +0800
+
+    fix(model): yolo_head.py not support fp16 when fallback to cpu mode (#688)
+
+commit 6819425e78e28926d132863d4be20811729c9d44
+Author: wwqgtxx <wwqgtxx@gmail.com>
+Date:   Thu Sep 9 11:16:18 2021 +0800
+
+    fix(demo): --fp16 not working in demo.py (#648)
+
+commit 16ac8536a74a31c6c5070d18cb319acbed319eea
+Author: nihui <shuizhuyuanluo@126.com>
+Date:   Wed Sep 8 16:15:05 2021 +0800
+
+    feat(tools): support torchscript export (#668)
+
+commit 146d1ee57c989043d2cea80c0fa948ed827c93e3
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Tue Sep 7 15:38:34 2021 +0800
+
+    fix(data): fix a potential bug when mosaic_prob!=1 (#660)
+    
+    Co-authored-by: Songtao Liu <ruinmessi@gmail.com>
+
+commit a0cef7336316275d3f2cb2471d7d459778f7b38a
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Sat Sep 4 10:37:42 2021 +0800
+
+    Update model_zoo.md
+
+commit 65de9c67e974b1b62ad517db1f942be2697efce8
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Sat Sep 4 10:37:09 2021 +0800
+
+    Update README.md
+
+commit 69f1173a569f1e0cc41025146a32b5d5fa06dd26
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Tue Aug 31 19:05:20 2021 +0800
+
+    fix(data): training bug for rectangle input (#620)
+    
+    This PR fixes the performance degradation when training with rectangle image shapes.
+
+commit d17bef824966bf3f0209fd58c70d07f93265c9c7
+Author: Z,J Hu <41953310+F0xZz@users.noreply.github.com>
+Date:   Mon Aug 30 13:09:58 2021 +0800
+
+    fix(demo):  release blob in TensorRT(#403)
+    
+    fix(demo):  release blob in TensorRT
+
+commit 357141965c192abd7b8d08eb99b7b580c9a4b725
+Author: Yonghye Kwon <developer.0hye@gmail.com>
+Date:   Sat Aug 28 11:11:39 2021 +0900
+
+    skip copy bboxes in horizontal flip augmentation for speedup (#606)
+
+commit 40bde399eefff0782ab282a6d0451f573889aeb3
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Fri Aug 27 15:22:54 2021 +0800
+
+    fix(data): fix a potential bug after closing the mosaic augmentation (#603)
+
+commit a1a29586c7819e951b6d920103c7d70b28a66507
+Author: Yonghye Kwon <developer.0hye@gmail.com>
+Date:   Fri Aug 27 13:05:50 2021 +0900
+
+    feat(tools): add batch-size option for onnx conversion process (#582)
+    
+    feat(tools): add batch-size option for onnx conversion process
+
+commit 57ec302217a27ac6f7f15a70e5c622349dd3435c
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Fri Aug 27 11:54:57 2021 +0800
+
+    fix(data): remove the restriction of the valid box size (#600)
+
+commit 05b20c859d7fc8600ee2f916120131db200bc1ba
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Fri Aug 27 11:22:02 2021 +0800
+
+    add probability flag for hsv_augmentation and random_flip (#592)
+
+commit e579d81e59694a9b8b2c2630e766e87374cb2cad
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Thu Aug 26 15:49:38 2021 +0800
+
+    feat(demo): add class agnostic nms for demo and numpy based postprocessing (#588)
+    
+    feat(demo): add class agnostic nms for demo and numpy based postprocessing (#588)
+    
+    Co-authored-by: Feng Wang <wangfeng19950315@163.com>
+
+commit 04d511bcb925c9750596f76901d1b58e133b1d19
+Author: Yonghye Kwon <developer.0hye@gmail.com>
+Date:   Wed Aug 25 20:20:28 2021 +0900
+
+    fix typo in updates_note (#583)
+
+commit 3c07916abbaa05eea0295cd48c26623f05acb1ac
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Mon Aug 23 17:01:24 2021 +0800
+
+    fix(demo): fix megengine ref link (#564)
+
+commit 15e87259399a0f6900d0c065a9aaae18fe83a771
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Mon Aug 23 16:55:59 2021 +0800
+
+    refact (exp, docs) training scales controller and add the corresponding tutorial (#562)
+
+commit 528205b94f46ade3460519a97bfbb4a3d1c53df9
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Mon Aug 23 00:06:24 2021 +0800
+
+    Reduce warmup epochs from 5 to 1 when finetuning on custom data. (#418)
+    
+    This will improve yolox-s on VOC from 84.0 to 84.6 AP.
+
+commit 17f153b424009011fc6e04f97a81673727e28265
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Mon Aug 23 00:01:58 2021 +0800
+
+    fix typos (#556)
+
+commit bc6954328c36075ba031982cc91bbe09fa66e951
+Author: yusufpraditya <47532266+yusufpraditya@users.noreply.github.com>
+Date:   Sat Aug 21 19:27:10 2021 +0700
+
+    fix(docs) typos (#517)
+
+commit 5183a6716404bae497deb142d2c340a45ffdb175
+Author: byzhang <992110080@qq.com>
+Date:   Sat Aug 21 20:26:12 2021 +0800
+
+    feature(demo) Support rectangle image in yolox_openvino.cpp (#546)
+
+commit 8f5efc0d4e54c6e2bae0f04ffbc8be1f61eaf434
+Author: HongYu <20734616+james77777778@users.noreply.github.com>
+Date:   Fri Aug 20 15:26:54 2021 +0800
+
+    fix(docs) tiny & nano path (#541)
+
+commit 98e6a207c7b3788128e0deb9a5033a338314daf5
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Fri Aug 20 14:57:50 2021 +0800
+
+    fix(YOLOX) fix bugs in utils and evalutor, add user-friendly const value. (#538)
+    
+    fix(YOLOX) fix bugs in utils and evalutor, add user-friendly const value
+
+commit c9fe0aae2db90adccc90f7e5a16f044bf110c816
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Thu Aug 19 19:32:11 2021 +0800
+
+    feat(yolox): support torch amp and img caching, update preprocess logic (#523)
+    
+    feat(yolox): support torch amp and img caching, update preprocess logic
+
+commit e1052df71842031413f6030723c3607b839c80ce
+Author: Yonghye Kwon <developer.0hye@gmail.com>
+Date:   Thu Aug 12 11:40:52 2021 +0900
+
+    append trt engine file(*.engine) to .ignore (#443)
+
+commit 03a8514557a41b97eb8d24bb24d64f9d5730c748
+Author: Yonghye Kwon <developer.0hye@gmail.com>
+Date:   Thu Aug 12 10:13:11 2021 +0900
+
+    correct tutorial link (#442)
+
+commit 3bfac8f843791f007cb9cc7733e6e831f753e7d7
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Tue Aug 10 11:35:04 2021 +0800
+
+    chore(core): switch backend to spawn (#429)
+    
+    chore(core): switch backend to spawn
+
+commit 026844ef96361983884eb611a89c58f3f53b66e0
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Mon Aug 9 10:28:29 2021 +0800
+
+    Update README.md
+
+commit 73ea2068fb70e38fe977b55dc5c5515f6732bd83
+Author: zqjnyr <69241941+zqjnyr@users.noreply.github.com>
+Date:   Sun Aug 8 12:59:17 2021 +0800
+
+    Modify voc.py (#413)
+    
+    Remove the "forced lower case" when reading VOC class names.
+
+commit 902b372be820a738ee95c55da2a957c5c2161536
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Fri Aug 6 19:28:49 2021 +0800
+
+    fix(demo): update yolox.cpp in ncnn (#402)
+    
+    fix(demo): update yolox.cpp in ncnn
+
+commit 0f8513da02d6b321ce0727b732be7667878c3847
+Author: Z,J Hu <41953310+F0xZz@users.noreply.github.com>
+Date:   Fri Aug 6 17:13:31 2021 +0800
+
+    fix(demo): fix num_class value in TRT inference (#251)
+    
+    fix(demo): fix num_class value in TRT inference
+
+commit 5bc3f230df55f285d1d82d7beed0d17af1386139
+Author: Yonghye Kwon <developer.0hye@gmail.com>
+Date:   Fri Aug 6 17:40:37 2021 +0900
+
+    chore(demo): add size adaptive blobFromImage function in TRT(#295)
+    
+    chore(demo): add size adaptive blobFromImage function in TRT
+
+commit 38e3c56035a0c3765df2439f911ca20c9ae4f447
+Author: Kaiyu Li <1150249769@qq.com>
+Date:   Fri Aug 6 16:28:51 2021 +0800
+
+    chore(examples): update import in exps(#42)
+    
+    chore(examples): update import in exps
+
+commit b861b22d3f8c78bfab129b8bbfbe2875822941e0
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Fri Aug 6 16:03:17 2021 +0800
+
+    feat(YOLOX): lint code and add a simple workflow (#400)
+
+commit 97c4b6c94a6788432eef9512f810fb6390412da0
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Fri Aug 6 15:17:31 2021 +0800
+
+    chore(core): remove redundant code in EMA (#396)
+    
+    remove redundant code in EMA
+
+commit 61e4b0f3f0a474cfb37e5877f0280b4e9dbae5ec
+Author: Yonghye Kwon <developer.0hye@gmail.com>
+Date:   Fri Aug 6 16:00:18 2021 +0900
+
+    fix typo "wheather" -> "whether" in comment in YOLOXHead Class (#392)
+    
+    * fix typo "wheather" -> "whether" in comment in YOLOXHead Class
+
+commit a37897af6df18986d413001a68e8d7692169f39e
+Author: Xinran Xu <xxr3376@gmail.com>
+Date:   Thu Aug 5 19:49:28 2021 +0800
+
+    Add MegEngine implementation link (#384)
+    
+    Add MegEngine implementation link
+
+commit 27162d5e5c11fddbd41b6ff38b3fada92c606702
+Author: Songyang Zhang <tonysy@users.noreply.github.com>
+Date:   Wed Aug 4 14:14:04 2021 +0800
+
+    build webpage of documentation (#352)
+
+commit 1660f0c285eb7c914b96dff82c76e415618e5371
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Tue Aug 3 15:26:32 2021 +0800
+
+    remove 'tar' suffix and improve yolox-tiny from 31.7 to 32.8 (#329)
+
+commit 7f8d036459d963a75b91de61059fc7cddb2340e2
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Tue Aug 3 12:01:09 2021 +0800
+
+    fix coco annotation parser (#324)
+
+commit b3fa825516d7005b635276c226062dfd7dbdbc57
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Tue Aug 3 11:13:05 2021 +0800
+
+    Update README.md
+
+commit 9dc0feb150e9763b95e1b2799bc725e4f23a2e7b
+Author: Ren Jin <jariof@foxmail.com>
+Date:   Tue Aug 3 11:07:55 2021 +0800
+
+    Fix compile error in Windows environment (#274)
+
+commit 76c26c6ec0550c490c798890cdbf00e01c85739d
+Author: Yonghye Kwon <developer.0hye@gmail.com>
+Date:   Tue Aug 3 11:53:57 2021 +0900
+
+    Skip to save unused tensor in dynamic_k_matching function (#304)
+    
+    Skip to save unused tensor in dynamic_k_matching function for saving memory usage
+
+commit 296d5b858bb67c44796cc834cf6e10eff6d6e044
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Mon Aug 2 17:21:10 2021 +0800
+
+    Fix coco eval bug when yolox is not installed correctly (#312)
+
+commit 29df1fb9bc456fcd5c35653312d7c22c9f66b9f8
+Author: SWHL <liekkaskono@163.com>
+Date:   Mon Aug 2 14:37:13 2021 +0800
+
+    Add custom training sample code and dataset (#256)
+    
+    * add train custom dataset code
+    * update custom docs
+    * fix(evaluator): fix n_samples=0 bug for the len of dataloader is 1
+
+commit f54bcbb3770d993011d49d8fe92feb066eb2cea4
+Author: Yonghye Kwon <developer.0hye@gmail.com>
+Date:   Mon Aug 2 11:38:47 2021 +0900
+
+    remove an unused member variable  self.expanded_strides (#294)
+
+commit 3640b242bdd752715ea6e38dfb7ad7c2fbe9adf4
+Author: Jonas Steinmann <steinmann.jonas@gmail.com>
+Date:   Sat Jul 31 18:08:43 2021 +0200
+
+    Fix --fp16 option (#247)
+    
+    Default needs to be set to False, for the option to have any effect at all
+
+commit d1e80118e1a6dd9fbde2e2c374f737997f117a59
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Fri Jul 30 18:07:38 2021 +0800
+
+    fix(data): fix bug in  mixup  (#275)
+    
+    fix(data): fix bug in  mixup
+
+commit 7d01c9e1b44e72b3098adf5b0946e168818951ae
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Thu Jul 29 15:53:18 2021 +0800
+
+    Update TensorRT C++ Readme
+
+commit f5331eaac5c03f73f59274522fe0507a030c5386
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Thu Jul 29 15:16:13 2021 +0800
+
+     fix bug of multi-machine training (#240)
+    
+    fix(tools): fix bug of mm training
+
+commit d776311e421f0b5e9598c2b81e66797af83969e6
+Author: Gu Wang <wangg12@users.noreply.github.com>
+Date:   Thu Jul 29 12:17:59 2021 +0800
+
+    img_info should be (height, width) for voc (#242)
+
+commit 819b12d35759a8859654260a0cabf3940962d74b
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Wed Jul 28 16:43:20 2021 +0800
+
+    fix mosaic bug (#224)
+
+commit d89453018099062ad0a15d6df2db9a3c65fd3a1a
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Wed Jul 28 16:29:37 2021 +0800
+
+    Fix(core): fix memory leak issue and switch to subprocess backend (#216)
+    
+    * fix RAM leak error
+    
+    * fix another memory leak
+    
+    * update boxes.py
+    
+    * make flake8 happy
+
+commit 5945f9ca98bd8c41b50f6d683732254886faf128
+Author: xiguadong <55774832+xiguadong@users.noreply.github.com>
+Date:   Wed Jul 28 13:28:45 2021 +0800
+
+    fix(docs): fix typo in ncnn README (#90)
+    
+    fix(docs): fix typo in ncnn README
+
+commit 4265ec3675c8ee0d96fa1e9bc43c2e38715cee78
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Wed Jul 28 11:20:33 2021 +0800
+
+    fix bug in demo_postprocessing for non-square input image (#203)
+    
+    * fix bug in demo_postprocessing for non-square input image
+
+commit e7f78f2db7f3fbaabb30f496699b13ceb535ec24
+Author: nihui <shuizhuyuanluo@126.com>
+Date:   Mon Jul 26 23:02:18 2021 +0800
+
+    fix(docs): fix typo and highlight keyword (#178)
+    
+    fix(docs): fix typo and highlight keyword
+
+commit 8ba73adbad0415f56378eb77f8d28ea7969fb87c
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Mon Jul 26 21:15:26 2021 +0800
+
+    revert "chore(core): update launch backend to subprocess (#158)" (#176)
+    
+    This reverts commit 9ac889 to fix training bug
+
+commit 44d837d1a1af249bf1ed6927c61097a8e8ab96d7
+Author: Nitin Rai <mneonizer@gmail.com>
+Date:   Mon Jul 26 16:58:14 2021 +0530
+
+    chore(tools): fix potential bug  and update docs  (#89)
+    
+    chore(tools): fix potential bug  and update docs
+
+commit 34cb2b27463343dba6ef18003b43d7fc2777e97e
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Mon Jul 26 18:38:56 2021 +0800
+
+    fix(data): revert mixup refactor (#170)
+
+commit 9c0d4fb4c3a5df8f30e4d07b8386076ff11f48e8
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Mon Jul 26 18:10:55 2021 +0800
+
+    fix openvino python demo (#169)
+    
+    * fix openvino python demo
+
+commit 8cf70b8493c13c33d766aac78a1652348e0e942a
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Mon Jul 26 16:37:30 2021 +0800
+
+    Fix eval bug (#161)
+    
+    * change to subprocess beckend
+    
+    * fix eval bug
+    
+    * Update launch.py
+    
+    make flake8 happy
+    
+    Co-authored-by: Feng Wang <wangfeng19950315@163.com>
+
+commit 9ac8895af03200bd32cfe2db42c1d23dd914b3f3
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Mon Jul 26 15:59:54 2021 +0800
+
+    chore(core): update launch backend to subprocess (#158)
+    
+    chore(core): update launch backend to subprocess
+
+commit 50dfab56a425bc48ade0b939a7dcdb0331e96716
+Author: haolongzhangm <longhaozhang@gmail.com>
+Date:   Mon Jul 26 15:51:39 2021 +0800
+
+    chore(demo): add MegEngine benchmark (#156)
+    
+    chore(demo): add MegEngine benchmark
+
+commit e2fa8de3747d4ee91611e65459f625ed2aefdaa5
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Mon Jul 26 15:37:20 2021 +0800
+
+    chore(demo): update megengine deployment (#153)
+    
+    chore(demo): update megengine deployment
+
+commit a3f1c644aa5a2617a205c43d4b2e72e180ab6eff
+Author: haolongzhangm <longhaozhang@gmail.com>
+Date:   Mon Jul 26 14:30:14 2021 +0800
+
+    feat(demo): add MegEngine demo example (#146)
+    
+    feat(demo): add MegEngine demo example.
+
+commit 96b74a504f183801dc4831931930b821fbe9d95d
+Author: Songtao Liu <ruinmessi@gmail.com>
+Date:   Mon Jul 26 09:01:47 2021 +0800
+
+    Fix occupy_mem bug (#137)
+    
+    * fix(data): fix sampler bug for single device
+    
+    * fix trt and cpu device bug in demo
+    
+    * add third-party resources
+    
+    * fix cpp return bug
+    
+    * fix demo bug for trt
+    
+    * fix occupy_mem bug
+    
+    Co-authored-by: liusongtao <liusongtao@megvii.com>
+
+commit cbb599a08395303f22a262693cce90858cae3196
+Author: Ge <gezheng121@foxmail.com>
+Date:   Sun Jul 25 20:30:29 2021 +0800
+
+    fix bugs in demo
+
+commit c8fda3bfd925c034c03dc4c6a806eed03d65fa91
+Author: Ge <gezheng121@foxmail.com>
+Date:   Sun Jul 25 16:40:09 2021 +0800
+
+    fix default settings for demo
+
+commit 30d0cbbe972819f9975a894735624813cfbcad9e
+Author: 葛政（实习） <gezheng@megvii.com>
+Date:   Sun Jul 25 16:28:36 2021 +0800
+
+    fix typos
+
+commit 3f6db2c33cbea0b5cfa81b79db923827287e8a7e
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Sun Jul 25 16:24:52 2021 +0800
+
+    Update train.py
+    
+    fix typo
+
+commit d848ac50e26a646003a755cbc094f1322479b6c2
+Author: ruinmessi <ruinmessi@gmail.com>
+Date:   Fri Jul 23 17:56:10 2021 +0800
+
+    Update README.md
+
+commit 5e3ffd39aa69b404d25f068d1e4f4d6587abc3d4
+Author: ruinmessi <ruinmessi@gmail.com>
+Date:   Fri Jul 23 17:54:05 2021 +0800
+
+    fix(YOLOX): fix bug in trt demo and cpp (#116)
+    
+    fix(YOLOX): fix bug in trt demo and cpp
+
+commit e5432474fd7b98389bf81e9c01530b916b003efc
+Author: ruinmessi <ruinmessi@gmail.com>
+Date:   Fri Jul 23 15:24:46 2021 +0800
+
+    Add third-party resources (#106)
+
+commit 09c0f4a3020481d9c3052b81e0469b3b45bdad4a
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Fri Jul 23 14:48:45 2021 +0800
+
+    Update requirements.txt
+    
+    requires pytorch version >= 1.7
+
+commit 672649422eda2a97736ac0b9c3212a7ac330c067
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Thu Jul 22 21:32:54 2021 +0800
+
+    chore(docs): provide github download (#84)
+
+commit fb19e96923ebd032de7b605cf1e2f0547ca4d840
+Author: ruinmessi <ruinmessi@gmail.com>
+Date:   Thu Jul 22 19:38:47 2021 +0800
+
+    fix(tools): use gpu for trt (#80)
+    
+    fix(tools): use gpu for trt
+
+commit 83d87ba0fafc10e028ff6bc7346ff127b304f391
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Thu Jul 22 17:36:30 2021 +0800
+
+    fix bugs in demo, support device parser for demo. (#77)
+    
+    fix(tools): support device parser for demo
+
+commit ccd82dffc1003cbf974d15259df494708fa1f265
+Author: Jinrong Yang <57621290+yancie-yjr@users.noreply.github.com>
+Date:   Thu Jul 22 15:11:55 2021 +0800
+
+    fix multiclass_nms bug (#66)
+
+commit a026133849b724b64fc4794224ee2a2b1c3b8600
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Thu Jul 22 13:54:38 2021 +0800
+
+    fix(utils): change logic of setup_env to provide better feeling (#63)
+
+commit ab01695426b3359391e49b2c28d69cb8a2e789b6
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Wed Jul 21 21:29:11 2021 +0800
+
+    fix path error
+
+commit 66776279109f0f7cdd0cd7c8e669b4dd372c1007
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Wed Jul 21 16:12:28 2021 +0800
+
+    chore(utils): update logic configure_nccl
+
+commit 90bcdd3783feb68de0065427a9f37891baa81674
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Wed Jul 21 16:08:55 2021 +0800
+
+    refactor(data): refactor dataset logic.
+
+commit 68edcd945cb1671f0c4dc466de82117f405d2e43
+Author: Zhiqiang Wang <zhiqwang@outlook.com>
+Date:   Wed Jul 21 16:10:09 2021 +0800
+
+    Call apex in is_parallel (#21)
+
+commit 79e5599631ad7b781051ae36338cad7b1d972aea
+Author: Katsuya Hyodo <rmsdh122@yahoo.co.jp>
+Date:   Wed Jul 21 12:19:22 2021 +0900
+
+    fix(docs): fix Typo in README (#27)
+
+commit 2354b90afd8fdca0bf4038c83b004581ce7ede8e
+Author: RangiLyu <lyuchqi@gmail.com>
+Date:   Wed Jul 21 10:58:33 2021 +0800
+
+    fix(doc): Delete redundant </details> (#29)
+
+commit ce7d75497956c6c2544e352eda36f0173a917989
+Author: ruinmessi <ruinmessi@gmail.com>
+Date:   Tue Jul 20 18:21:07 2021 +0800
+
+    fix(data): fix sampler bug for single device (#22)
+    
+    Co-authored-by: liusongtao <liusongtao@megvii.com>
+
+commit 5fe791ed896197027d6d4a332098ff1c23c0afaa
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Tue Jul 20 17:16:11 2021 +0800
+
+    fix(exp): change output_dir in base_exp and fix bug of exp mapping (#18)
+
+commit 69278c1692c5ca5c9e48b511ab8cf2a44ceb4de8
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Tue Jul 20 16:06:20 2021 +0800
+
+    fix typo in README
+
+commit 8a32aa16853d4c48580a1ef5eb88e2bb0e2e3125
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Tue Jul 20 16:02:04 2021 +0800
+
+    fix(data): fix bug in voc dataloader (#11)
+    
+    fix(data): fix bug in voc dataloader
+
+commit 85c4f652e31c41cb08ef1941756d16d62741b87d
+Author: ruinmessi <ruinmessi@gmail.com>
+Date:   Tue Jul 20 15:23:27 2021 +0800
+
+    Update README.md
+
+commit 2812a2885a8fdc20ced7c44c9f8e09eb590faeca
+Author: teng <19603468+cmdbug@users.noreply.github.com>
+Date:   Tue Jul 20 14:10:18 2021 +0800
+
+    fix typo (#7)
+    
+    fix(docs): typo named NCNN to ncnn
+
+commit b1e1e71dec0c7f3f0438d38e9030dacd13dbb044
+Author: Zheng Ge <gezheng@megvii.com>
+Date:   Tue Jul 20 13:59:54 2021 +0800
+
+    fix vis font
+
+commit 807c300f7c22c5186626736056019a1d144e5e6d
+Author: ZhengGe <gezheng@megvii.com>
+Date:   Tue Jul 20 13:56:59 2021 +0800
+
+    fix wrong path
+
+commit 30268b616bfd0d155cba442a8850f24bc29be2ef
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Tue Jul 20 11:41:54 2021 +0800
+
+    fix(docs): update ncnn README and fix typo (#6)
+
+commit cf7485faf5c3f9f908f9f8fac0d7096c30eb9542
+Author: 葛政（实习） <gezheng@megvii.com>
+Date:   Tue Jul 20 10:53:51 2021 +0800
+
+    Update README
+
+commit 36fdd49581513a7278144cca15763968c24ec75c
+Author: Ge Zheng <gezheng121@foxmail.com>
+Date:   Tue Jul 20 10:27:18 2021 +0800
+
+    Update README.md
+    
+    fix a few errors in README
+
+commit f94a13abd1c92f7e07f027c85fd9aafe229e2b85
+Author: ruinmessi <ruinmessi@gmail.com>
+Date:   Tue Jul 20 09:50:51 2021 +0800
+
+    Update arxiv paper link
+
+commit 54950c5b13a6186db1fa4e561327227d13417b15
+Author: Zhiqiang Wang <zhiqwang@foxmail.com>
+Date:   Tue Jul 20 09:47:46 2021 +0800
+
+    Fixing typo and remove the trailing spaces in docs (#1)
+    
+    * docs(docs): fixing typo in docs
+
+commit 4c01825bf546b9ff218a56a9769fbeb1ea4ec8d3
+Author: ruinmessi <ruinmessi@gmail.com>
+Date:   Mon Jul 19 23:16:49 2021 +0800
+
+    Update README.md
+
+commit f281865af2f0cdf5ff113304f804bf430c4485ca
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Mon Jul 19 22:42:51 2021 +0800
+
+    fix(requirements.txt): remove useless lib
+
+commit 94bfcb787448eb794f11dc93c3190b850ba095fb
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Mon Jul 19 22:37:36 2021 +0800
+
+    fix(setup): fix install
+
+commit f1be0bd957c55d017833796e12e7bc4007882e3d
+Author: 王枫02-Base Detection <wangfeng02@megvii.com>
+Date:   Mon Jul 19 22:31:52 2021 +0800
+
+    feat(YOLOX): update README and requirements.txt
+
+commit 42c9f1c1be3713cd7f3597027d3a015585b9e160
+Author: 葛政（实习） <gezheng@megvii.com>
+Date:   Mon Jul 19 22:01:25 2021 +0800
+
+    fix(YOLOX): fix several bugs
+
+commit 8506f7e9c330be07b498bc950bc8cbafdf5d2de3
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Mon Jul 19 21:36:42 2021 +0800
+
+    fix(exp): change num_workers value
+
+commit 929754ac0779a63f97ba2ad24ed958686319b9e1
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Mon Jul 19 21:09:48 2021 +0800
+
+    refactor(exp): move exps to default
+
+commit 2bbb1b195cf2753d41bd5ac49ed0e8f9047db02f
+Author: 王枫02-Base Detection <wangfeng02@megvii.com>
+Date:   Mon Jul 19 21:07:07 2021 +0800
+
+    feat(YOLOX): update README and fix serveral bugs.
+
+commit bae923467b8a06b11a4fd68e413ff238a0eebf94
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Mon Jul 19 20:01:16 2021 +0800
+
+    refactor(YOLOX): refactor datasets and add demo_utils
+
+commit cbc19006ce73d454932429c5da162b9dde38356a
+Author: 葛政(实习) <gezheng@megvii.com>
+Date:   Sun Jul 18 17:35:53 2021 +0800
+
+    feat(demo): add OpenVINO and ONNXRuntime demo
+
+commit 9ba72a97c41e93b4c1f84b86b2f8d19cf31e63d0
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Sun Jul 18 17:09:15 2021 +0800
+
+    chore(demo): add ncnn cpp README
+
+commit 6fe5967736175e1accb92b169fc3c7d85269116d
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Sun Jul 18 15:41:21 2021 +0800
+
+    feat(demo): add android demo of YOLOX
+
+commit c4714bb97c2f13d26195544d5f9e1ea91241ee2b
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Sun Jul 18 14:26:49 2021 +0800
+
+    feat(YOLOX): add some basic experiments
+
+commit fb63c83620bc49bf08dbfcdfc91c5cd8f885f78a
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Sat Jul 17 20:23:00 2021 +0800
+
+    feat(YOLOX): add header
+
+commit dd7161dc1628d0471b91449b1f3ae452b92deb51
+Author: FateScript <wangfeng02@megvii.com>
+Date:   Sat Jul 17 19:10:55 2021 +0800
+
+    feat(YOLOX): support YOLOX
+
+commit ab5f4a1eb80df38d377203c6d08d3363de26e93b
+Author: Feng Wang <wangfeng19950315@163.com>
+Date:   Sat Jul 17 10:01:45 2021 +0800
+
+    Initial commit

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+    <robot name="item07">
+    <link name="base_link">
+        <visual>
+        <origin xyz="0 0 0"/>
+        <geometry>
+            <mesh filename="/home/honda/honda/3Dmodels/item07/item07.obj" scale="0.0025 0.0025 0.0025"/>
+        </geometry>
+        <material>
+            <color rgba="1 1 1 1"/>
+        </material>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0"/>
+        <geometry>
+            <mesh filename="/home/honda/honda/3Dmodels/item07/item07.obj" scale="0.0025 0.0025 0.0025"/>
+        </geometry>
+        </collision>
+    </link>
+    </robot>
+    

@@ -1,0 +1,31 @@
+--- evaluator.py	2022-07-17 00:24:17.982452277 +0900
++++ evaluator_new.py	2022-07-17 00:21:08.685580180 +0900
+@@ -8,6 +8,8 @@
+ 
+ import pfrl
+ 
++import matplotlib.pyplot as plt
++
+ 
+ def _run_episodes(
+     env,
+@@ -516,6 +518,14 @@
+     def evaluate_if_necessary(self, t, episodes):
+         if t >= self.prev_eval_t + self.eval_interval:
+             score = self.evaluate_and_update_max_score(t, episodes)
++            data01_axis1, _, _, data01_value1, _, _, _, _, _, _, _, _, _, _ = np.loadtxt(self.outdir+"/scores.txt", skiprows=1, unpack=True)
++            fig = plt.figure(figsize=(12, 6))
++            ax = fig.add_subplot(111)
++            ax.plot(data01_axis1, data01_value1,  color="r", label="score")
++            ax.set_xlabel("step")
++            ax.set_ylabel("reward")
++            ax.legend(loc="upper left")
++            plt.savefig(self.outdir+"/graph.png", dpi=300)
+             self.prev_eval_t = t - t % self.eval_interval
+             return score
+         return None
+@@ -672,3 +682,4 @@
+ 
+     def join_tensorboard_writer(self):
+         self.record_tb_stats_thread.join()
++

@@ -1,0 +1,214 @@
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    ../LICENSE
+	deleted:    ../README.md
+	deleted:    ../assets/demo.png
+	deleted:    ../assets/dog.jpg
+	deleted:    ../assets/git_fig.png
+	deleted:    ../assets/logo.png
+	deleted:    ../datasets/README.md
+	deleted:    ../demo/MegEngine/cpp/README.md
+	deleted:    ../demo/MegEngine/cpp/build.sh
+	deleted:    ../demo/MegEngine/cpp/yolox.cpp
+	deleted:    ../demo/MegEngine/python/README.md
+	deleted:    ../demo/MegEngine/python/build.py
+	deleted:    ../demo/MegEngine/python/convert_weights.py
+	deleted:    ../demo/MegEngine/python/demo.py
+	deleted:    ../demo/MegEngine/python/dump.py
+	deleted:    ../demo/MegEngine/python/models/__init__.py
+	deleted:    ../demo/MegEngine/python/models/darknet.py
+	deleted:    ../demo/MegEngine/python/models/network_blocks.py
+	deleted:    ../demo/MegEngine/python/models/yolo_fpn.py
+	deleted:    ../demo/MegEngine/python/models/yolo_head.py
+	deleted:    ../demo/MegEngine/python/models/yolo_pafpn.py
+	deleted:    ../demo/MegEngine/python/models/yolox.py
+	deleted:    ../demo/ONNXRuntime/README.md
+	deleted:    ../demo/ONNXRuntime/onnx_inference.py
+	deleted:    ../demo/OpenVINO/README.md
+	deleted:    ../demo/OpenVINO/cpp/CMakeLists.txt
+	deleted:    ../demo/OpenVINO/cpp/README.md
+	deleted:    ../demo/OpenVINO/cpp/yolox_openvino.cpp
+	deleted:    ../demo/OpenVINO/python/README.md
+	deleted:    ../demo/OpenVINO/python/openvino_inference.py
+	deleted:    ../demo/TensorRT/cpp/CMakeLists.txt
+	deleted:    ../demo/TensorRT/cpp/README.md
+	deleted:    ../demo/TensorRT/cpp/logging.h
+	deleted:    ../demo/TensorRT/cpp/yolox.cpp
+	deleted:    ../demo/TensorRT/python/README.md
+	deleted:    ../demo/ncnn/android/README.md
+	deleted:    ../demo/ncnn/android/app/build.gradle
+	deleted:    ../demo/ncnn/android/app/src/main/AndroidManifest.xml
+	deleted:    ../demo/ncnn/android/app/src/main/assets/yolox.param
+	deleted:    ../demo/ncnn/android/app/src/main/java/com/megvii/yoloXncnn/MainActivity.java
+	deleted:    ../demo/ncnn/android/app/src/main/java/com/megvii/yoloXncnn/YOLOXncnn.java
+	deleted:    ../demo/ncnn/android/app/src/main/java/com/megvii/yoloXncnn/yoloXncnn.java
+	deleted:    ../demo/ncnn/android/app/src/main/jni/CMakeLists.txt
+	deleted:    ../demo/ncnn/android/app/src/main/jni/yoloXncnn_jni.cpp
+	deleted:    ../demo/ncnn/android/app/src/main/res/layout/main.xml
+	deleted:    ../demo/ncnn/android/app/src/main/res/values/strings.xml
+	deleted:    ../demo/ncnn/android/build.gradle
+	deleted:    ../demo/ncnn/android/gradle/wrapper/gradle-wrapper.jar
+	deleted:    ../demo/ncnn/android/gradle/wrapper/gradle-wrapper.properties
+	deleted:    ../demo/ncnn/android/gradlew
+	deleted:    ../demo/ncnn/android/gradlew.bat
+	deleted:    ../demo/ncnn/android/settings.gradle
+	deleted:    ../demo/ncnn/cpp/README.md
+	deleted:    ../demo/ncnn/cpp/yolox.cpp
+	deleted:    ../docs/.gitignore
+	deleted:    ../docs/Makefile
+	deleted:    ../docs/_static/css/custom.css
+	deleted:    ../docs/conf.py
+	deleted:    ../docs/demo/megengine_cpp_readme.md
+	deleted:    ../docs/demo/megengine_py_readme.md
+	deleted:    ../docs/demo/ncnn_android_readme.md
+	deleted:    ../docs/demo/ncnn_cpp_readme.md
+	deleted:    ../docs/demo/onnx_readme.md
+	deleted:    ../docs/demo/openvino_cpp_readme.md
+	deleted:    ../docs/demo/openvino_py_readme.md
+	deleted:    ../docs/demo/trt_cpp_readme.md
+	deleted:    ../docs/demo/trt_py_readme.md
+	deleted:    ../docs/index.rst
+	deleted:    ../docs/manipulate_training_image_size.md
+	deleted:    ../docs/model_zoo.md
+	deleted:    ../docs/quick_run.md
+	deleted:    ../docs/requirements-doc.txt
+	deleted:    ../docs/train_custom_data.md
+	deleted:    ../docs/updates_note.md
+	deleted:    ../exps/default/__init__.py
+	deleted:    ../exps/default/yolov3.py
+	deleted:    ../exps/default/yolox_l.py
+	deleted:    ../exps/default/yolox_m.py
+	deleted:    ../exps/default/yolox_nano.py
+	deleted:    ../exps/default/yolox_s.py
+	deleted:    ../exps/default/yolox_tiny.py
+	deleted:    ../exps/default/yolox_x.py
+	deleted:    ../exps/example/custom/nano.py
+	deleted:    ../exps/example/custom/yolox_s.py
+	deleted:    ../exps/example/yolox_voc/yolox_voc_s.py
+	deleted:    ../requirements.txt
+	deleted:    ../setup.cfg
+	deleted:    ../setup.py
+	deleted:    ../tools/__init__.py
+	deleted:    ../tools/demo.py
+	deleted:    ../tools/eval.py
+	deleted:    ../tools/export_onnx.py
+	deleted:    ../tools/export_torchscript.py
+	deleted:    ../tools/train.py
+	deleted:    ../tools/trt.py
+	deleted:    ../yolox/__init__.py
+	deleted:    ../yolox/core/__init__.py
+	deleted:    ../yolox/core/launch.py
+	deleted:    ../yolox/core/trainer.py
+	deleted:    ../yolox/data/__init__.py
+	deleted:    ../yolox/data/data_augment.py
+	deleted:    ../yolox/data/data_prefetcher.py
+	deleted:    ../yolox/data/dataloading.py
+	deleted:    ../yolox/data/datasets/__init__.py
+	deleted:    ../yolox/data/datasets/coco.py
+	deleted:    ../yolox/data/datasets/coco_classes.py
+	deleted:    ../yolox/data/datasets/datasets_wrapper.py
+	deleted:    ../yolox/data/datasets/mosaicdetection.py
+	deleted:    ../yolox/data/datasets/voc.py
+	deleted:    ../yolox/data/datasets/voc_classes.py
+	deleted:    ../yolox/data/samplers.py
+	deleted:    ../yolox/evaluators/__init__.py
+	deleted:    ../yolox/evaluators/coco_evaluator.py
+	deleted:    ../yolox/evaluators/voc_eval.py
+	deleted:    ../yolox/evaluators/voc_evaluator.py
+	deleted:    ../yolox/exp/__init__.py
+	deleted:    ../yolox/exp/base_exp.py
+	deleted:    ../yolox/exp/build.py
+	deleted:    ../yolox/exp/default/__init__.py
+	deleted:    ../yolox/exp/yolox_base.py
+	deleted:    ../yolox/layers/__init__.py
+	deleted:    ../yolox/layers/csrc/cocoeval/cocoeval.cpp
+	deleted:    ../yolox/layers/csrc/cocoeval/cocoeval.h
+	deleted:    ../yolox/layers/csrc/vision.cpp
+	deleted:    ../yolox/layers/fast_coco_eval_api.py
+	deleted:    ../yolox/models/__init__.py
+	deleted:    ../yolox/models/darknet.py
+	deleted:    ../yolox/models/losses.py
+	deleted:    ../yolox/models/network_blocks.py
+	deleted:    ../yolox/models/yolo_fpn.py
+	deleted:    ../yolox/models/yolo_head.py
+	deleted:    ../yolox/models/yolo_pafpn.py
+	deleted:    ../yolox/models/yolox.py
+	deleted:    ../yolox/tools/__init__.py
+	deleted:    ../yolox/utils/__init__.py
+	deleted:    ../yolox/utils/allreduce_norm.py
+	deleted:    ../yolox/utils/boxes.py
+	deleted:    ../yolox/utils/checkpoint.py
+	deleted:    ../yolox/utils/demo_utils.py
+	deleted:    ../yolox/utils/dist.py
+	deleted:    ../yolox/utils/ema.py
+	deleted:    ../yolox/utils/logger.py
+	deleted:    ../yolox/utils/lr_scheduler.py
+	deleted:    ../yolox/utils/metric.py
+	deleted:    ../yolox/utils/model_utils.py
+	deleted:    ../yolox/utils/setup_env.py
+	deleted:    ../yolox/utils/visualize.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../.TeXworks/
+	../.anydesk/
+	../.apport-ignore.xml
+	../.atom/
+	../.bash_history
+	../.bash_logout
+	../.bashrc
+	../.chainer/
+	../.config/
+	../.cupy/
+	../.dbus/
+	../.docker/
+	../.eclipse/
+	../.gitconfig
+	../.gnupg/
+	../.jupyter/
+	../.keras/
+	../.latexmkrc
+	../.lesshst
+	../.local/
+	../.mozc/
+	../.mozilla/
+	../.nv/
+	../.pki/
+	../.profile
+	../.psensor/
+	../.putty/
+	../.python_history
+	../.ssh/
+	../.sudo_as_admin_successful
+	../.thunderbird/
+	../.viminfo
+	../.vscode-server/
+	../.wget-hsts
+	../.zoom/
+	../Downloads/
+	../MC2ARCdataset_evaluate/
+	../YOLOX/
+	../anydesk_6.1.1-1_amd64.deb
+	../competition/
+	../font.py
+	../hoge/
+	../honda.tar.gz
+	./
+	../hsr/
+	../isaac_2/
+	../isaacgym/
+	../pfrl/
+	../pybullet_ur5_gripper/
+	../snap/
+	../tome/
+	../yolov5/
+	"../\343\203\200\343\202\246\343\203\263\343\203\255\343\203\274\343\203\211/"
+	"../\343\203\207\343\202\271\343\202\257\343\203\210\343\203\203\343\203\227/"
+	"../\343\203\211\343\202\255\343\203\245\343\203\241\343\203\263\343\203\210/"
+	"../\343\203\224\343\202\257\343\203\201\343\203\243/"
+	"../\345\205\254\351\226\213/"
+	"../\350\253\226\346\226\207/"
+
+no changes added to commit (use "git add" and/or "git commit -a")

@@ -1,0 +1,29 @@
+--- prepare_output_dir.py	2022-03-13 10:45:54.438222000 +0900
++++ prepare_output_dir_patch.py	2022-04-27 11:00:23.436883000 +0900
+@@ -9,7 +9,7 @@
+ from binascii import crc32
+ 
+ import pfrl
+-
++import pytz
+ 
+ def is_under_git_control():
+     """Return true iff the current directory is under git control."""
+@@ -111,7 +111,7 @@
+         Path of the output directory created by this function (str).
+     """
+ 
+-    timestamp = datetime.datetime.now().strftime(time_format)
++    timestamp = datetime.datetime.now(pytz.timezone('Asia/Tokyo')).strftime(time_format)
+ 
+     if exp_id is None:
+         if is_under_git_control():
+@@ -137,7 +137,7 @@
+         # Timestamp created above is not to be reused, because (1)
+         # recursive backup of existing outdir may take a long time,
+         # and (2) the format of the timestamp must be unified.
+-        timestamp = datetime.datetime.now().strftime("%Y%m%dT%H%M%S.%f")
++        timestamp = datetime.datetime.now(pytz.timezone('Asia/Tokyo')).strftime("%Y%m%dT%H%M%S.%f")
+         f.write("{}\n".format(timestamp))
+ 
+     # Save all the arguments

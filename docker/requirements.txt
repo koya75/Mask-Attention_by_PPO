@@ -1,0 +1,8 @@
+matplotlib==3.6.0
+tensorboardX==2.6.2.2
+pybullet==3.2.6
+gym==0.26.2
+optuna==3.4.0
+plotly==5.18.0
+pandas==1.4.4
+vit-pytorch==1.6.4

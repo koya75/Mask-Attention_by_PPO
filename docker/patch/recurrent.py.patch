@@ -1,0 +1,37 @@
+--- recurrent.py	2022-06-22 11:15:35.870320279 +0900
++++ recurrent_stripe.py	2022-06-22 11:15:16.465815653 +0900
+@@ -140,7 +140,7 @@
+         return pack
+ 
+ 
+-def one_step_forward(rnn, batch_input, recurrent_state):
++def one_step_forward(rnn, batch_input, recurrent_state, ok):
+     """One-step batch forward computation of a recurrent module.
+ 
+     Args:
+@@ -153,11 +153,11 @@
+         object: New batched recurrent state.
+     """
+     pack = pack_one_step_batch_as_sequences(batch_input)
+-    y, recurrent_state = rnn(pack, recurrent_state)
+-    return unpack_sequences_as_one_step_batch(y), recurrent_state
++    y, recurrent_state, mask = rnn(pack, recurrent_state, ok)
++    return unpack_sequences_as_one_step_batch(y), recurrent_state, mask
+ 
+ 
+-def pack_and_forward(rnn, sequences, recurrent_state):
++def pack_and_forward(rnn, sequences, recurrent_state, ok):
+     """Pack sequences, multi-step forward, and then unwrap `PackedSequence`.
+ 
+     Args:
+@@ -170,8 +170,8 @@
+         object: New batched recurrent state.
+     """
+     pack = pack_sequences_recursive(sequences)
+-    y, recurrent_state = rnn(pack, recurrent_state)
+-    return unwrap_packed_sequences_recursive(y), recurrent_state
++    y, recurrent_state, mask = rnn(pack, recurrent_state, ok)
++    return unwrap_packed_sequences_recursive(y), recurrent_state, mask
+ 
+ 
+ def flatten_sequences_time_first(sequences):

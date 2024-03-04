@@ -1,0 +1,186 @@
+--- ppo.py	2022-06-17 10:37:24.035775063 +0900
++++ ppo_stripe.py	2022-06-17 10:37:24.075776013 +0900
+@@ -4,6 +4,7 @@
+ 
+ import numpy as np
+ import torch
++from torch import nn
+ import torch.nn.functional as F
+ 
+ import pfrl
+@@ -88,8 +89,9 @@
+         )
+         assert (rs is None) or (next_rs is None) or (len(rs) == len(next_rs))
+ 
+-        (flat_distribs, flat_vs), _ = pack_and_forward(model, seqs_states, rs)
+-        (_, flat_next_vs), _ = pack_and_forward(model, seqs_next_states, next_rs)
++        ok = False
++        (flat_distribs, flat_vs), _ , _ = pack_and_forward(model, seqs_states, rs, ok)
++        (_, flat_next_vs), _, _ = pack_and_forward(model, seqs_next_states, next_rs, ok)
+ 
+         flat_actions = torch.tensor(
+             [b["action"] for b in flat_transitions], device=device
+@@ -344,11 +346,15 @@
+         entropy_stats_window=1000,
+         value_loss_stats_window=100,
+         policy_loss_stats_window=100,
++        mask_value_loss_stats_window=100,
++        mask_policy_loss_stats_window=100,
+     ):
+         self.model = model
+         self.optimizer = optimizer
+         self.obs_normalizer = obs_normalizer
+ 
++        self.t = 0
++
+         if gpu is not None and gpu >= 0:
+             assert torch.cuda.is_available()
+             self.device = torch.device("cuda:{}".format(gpu))
+@@ -397,6 +403,8 @@
+         self.entropy_record = collections.deque(maxlen=entropy_stats_window)
+         self.value_loss_record = collections.deque(maxlen=value_loss_stats_window)
+         self.policy_loss_record = collections.deque(maxlen=policy_loss_stats_window)
++        self.mask_value_loss_record = collections.deque(maxlen=mask_value_loss_stats_window)
++        self.mask_policy_loss_record = collections.deque(maxlen=mask_policy_loss_stats_window)
+         self.explained_variance = np.nan
+         self.n_updates = 0
+ 
+@@ -510,6 +518,7 @@
+                 dtype=torch.float,
+                 device=device,
+             )
++
+             # Same shape as vs_pred: (batch_size, 1)
+             vs_pred_old = vs_pred_old[..., None]
+             vs_teacher = vs_teacher[..., None]
+@@ -533,6 +542,7 @@
+             self.n_updates += 1
+ 
+     def _update_once_recurrent(self, episodes, mean_advs, std_advs):
++        self.t += 1
+ 
+         assert std_advs is None or std_advs > 0
+ 
+@@ -587,10 +597,17 @@
+                 [ep[0]["recurrent_state"] for ep in episodes]
+             )
+ 
+-        (flat_distribs, flat_vs_pred), _ = pack_and_forward(self.model, seqs_states, rs)
++        #if self.t%120 == 0:
++        ok = True
++        """else:
++            ok = False"""
++
++        (flat_distribs, flat_vs_pred), _, mask_attention = pack_and_forward(self.model, seqs_states, rs, ok)
+         flat_log_probs = flat_distribs.log_prob(flat_actions)
+         flat_entropy = flat_distribs.entropy()
+ 
++        input_v, input_a, mask_v, mask_a, ld_v, ld_a = mask_attention
++
+         self.model.zero_grad()
+         loss = self._lossfun(
+             entropy=flat_entropy,
+@@ -600,7 +617,14 @@
+             log_probs_old=flat_log_probs_old,
+             advs=flat_advs,
+             vs_teacher=flat_vs_teacher,
+-        )
++            input_v=input_v,
++            input_a=input_a,
++            mask_v=mask_v,
++            mask_a=mask_a,
++            ld_v = ld_v,
++            ld_a = ld_a,
++    )
++        torch.autograd.set_detect_anomaly(True)
+         loss.backward()
+         if self.max_grad_norm is not None:
+             torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.max_grad_norm)
+@@ -634,7 +658,7 @@
+                 self._update_once_recurrent(minibatch, mean_advs, std_advs)
+ 
+     def _lossfun(
+-        self, entropy, vs_pred, log_probs, vs_pred_old, log_probs_old, advs, vs_teacher
++        self, entropy, vs_pred, log_probs, vs_pred_old, log_probs_old, advs, vs_teacher, input_v, input_a, mask_v, mask_a, ld_v, ld_a
+     ):
+ 
+         prob_ratio = torch.exp(log_probs - log_probs_old)
+@@ -662,13 +686,32 @@
+             )
+         loss_entropy = -torch.mean(entropy)
+ 
++        mask_attention_loss_v = 0
++        mask_attention_loss_a = 0
++
++        if ld_v and ld_a:
++            mask_attention_loss_v = F.mse_loss(input_v, mask_v)
++            mask_attention_loss_a = F.mse_loss(input_a, mask_a)
++        elif ld_v:
++            mask_attention_loss_v = F.mse_loss(input_v, mask_v)
++        elif ld_a:
++            mask_attention_loss_a = F.mse_loss(input_a, mask_a)
++        else:
++            with torch.no_grad():
++                mask_attention_loss_v
++                mask_attention_loss_a
++
++
+         self.value_loss_record.append(float(loss_value_func))
+         self.policy_loss_record.append(float(loss_policy))
++        self.mask_value_loss_record.append(float(mask_attention_loss_v))
++        self.mask_policy_loss_record.append(float(mask_attention_loss_a))
+ 
+         loss = (
+             loss_policy
+             + self.value_func_coef * loss_value_func
+             + self.entropy_coef * loss_entropy
++            + 0.001*(mask_attention_loss_v + mask_attention_loss_a)
+         )
+ 
+         return loss
+@@ -692,10 +735,12 @@
+         if self.obs_normalizer:
+             b_state = self.obs_normalizer(b_state, update=False)
+ 
++        ok = False
++
+         with torch.no_grad(), pfrl.utils.evaluating(self.model):
+             if self.recurrent:
+-                (action_distrib, _), self.test_recurrent_states = one_step_forward(
+-                    self.model, b_state, self.test_recurrent_states
++                (action_distrib, _), self.test_recurrent_states, _ = one_step_forward(
++                    self.model, b_state, self.test_recurrent_states, ok
+                 )
+             else:
+                 action_distrib, _ = self.model(b_state)
+@@ -720,6 +765,8 @@
+         assert len(self.batch_last_state) == num_envs
+         assert len(self.batch_last_action) == num_envs
+ 
++        ok = False
++
+         # action_distrib will be recomputed when computing gradients
+         with torch.no_grad(), pfrl.utils.evaluating(self.model):
+             if self.recurrent:
+@@ -728,8 +775,9 @@
+                 (
+                     (action_distrib, batch_value),
+                     self.train_recurrent_states,
++                    _,
+                 ) = one_step_forward(
+-                    self.model, b_state, self.train_prev_recurrent_states
++                    self.model, b_state, self.train_prev_recurrent_states, ok
+                 )
+             else:
+                 action_distrib, batch_value = self.model(b_state)
+@@ -815,6 +863,8 @@
+             ("average_entropy", _mean_or_nan(self.entropy_record)),
+             ("average_value_loss", _mean_or_nan(self.value_loss_record)),
+             ("average_policy_loss", _mean_or_nan(self.policy_loss_record)),
++            ("average_mask_v_loss", _mean_or_nan(self.mask_value_loss_record)),
++            ("average_mask_p_loss", _mean_or_nan(self.mask_policy_loss_record)),
+             ("n_updates", self.n_updates),
+             ("explained_variance", self.explained_variance),
+-        ]
++        ]
+\ ファイル末尾に改行がありません
