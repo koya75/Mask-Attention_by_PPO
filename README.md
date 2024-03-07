@@ -35,6 +35,7 @@ docker上で以下を実行します．
 
 # 引数の設定
 run_target_franka_ppo_model_mask_double_lstm.shの中に実験に使用する引数が記載されているので都度変更してください．
+```
 model=target_mask_double                    どのモデルを使うか
 robot=128                                   何台のロボットで実験するか
 
@@ -61,3 +62,4 @@ robot=128                                   何台のロボットで実験する
 --descentstep 12                            ハンドが何ステップで下がるか
 --mode normal                               ノーマルかハードか
 --hand                                      ハンドカメラを使う（無いと固定カメラ）
+```
