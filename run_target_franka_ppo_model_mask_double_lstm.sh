@@ -13,7 +13,6 @@ python target_train_franka_ppo.py \
     --lambd 0.995 \
     --lr 0.0002 \
     --max-grad-norm 40 \
-    --step_offset 0 \
     --gpu 2 \
     --use-lstm \
     --num-envs ${robot} \
